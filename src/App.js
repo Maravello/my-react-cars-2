@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import Acceuil from "./Pages/Acceuil";
 import Contact from "./Pages/Contact";
 import Apropos from "./Pages/Apropos";
+import Voitures from "./Pages/Voiture";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./StyleEverywhere/Stylish.css";
 
@@ -173,6 +174,7 @@ function App() {
           <Route path="/" element={<Acceuil />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/apropos" element={<Apropos />} />
+          <Route path="/Voiture" element={<Voitures />} />
         </Routes>
       </BrowserRouter>
 
