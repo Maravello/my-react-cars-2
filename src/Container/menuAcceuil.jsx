@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../StyleEverywhere/Stylish.css";
 function MenuAcceuil() {
 
@@ -8,10 +9,10 @@ function MenuAcceuil() {
             <h1>Menu</h1>
             <nav className="TableMenuAcceuil">
                 <ol className="breadcrumb">
-                    <li class="crumb"><a href="#home">Home</a></li>
-                    <li class="crumb"><a href="#about">About</a></li>
-                    <li class="crumb"><a href="#services">Services</a></li>
-                    <li class="crumb"><a href="#contact">Contact</a></li>
+                    <li class="crumb"><button><Link to="/">Home</Link></button></li>
+                    <li class="crumb"><a href="#about"><button>About</button></a></li>
+                    <li class="crumb"><button><Link to="/apropos">Services</Link></button></li>
+                    <li class="crumb"><button><Link to="/Contact"> Contact</Link></button></li>
                 </ol>
             </nav>
         </div>

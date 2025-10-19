@@ -2,10 +2,92 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 18px;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 12px auto;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(167,139,250,0.06), rgba(96,165,250,0.03));
+    border: 1px solid rgba(167,139,250,0.12);
+    box-shadow: 0 8px 28px rgba(7,10,25,0.65), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* Titre menu */
+.menu-title {
+    margin: 6px 0 12px 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #eaeaff;
+    letter-spacing: 0.6px;
+    background: linear-gradient(90deg,#A78BFA,#60A5FA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Navigation style (liste horizontale) */
+.TableMenuAcceuil .breadcrumb {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px;
+    margin: 0;
+    list-style: none;
+}
+
+/* Element individuel (positionnement) */
+.crumb {
+    display: inline-flex;
+}
+
+/* Liens en style "bouton" */
+.menu-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #0b1020;
+    font-weight: 700;
+    background: linear-gradient(90deg, rgba(96,165,250,0.15), rgba(167,139,250,0.12));
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: transform .16s ease, box-shadow .18s ease, background .18s ease;
+    backdrop-filter: blur(4px) saturate(120%);
+}
+
+/* Hover / focus / active */
+.menu-link:hover, .menu-link:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(96,165,250,0.14);
+    background: linear-gradient(90deg, rgba(96,165,250,0.22), rgba(167,139,250,0.18));
+    outline: none;
+}
+.menu-link:active {
+    transform: translateY(-1px) scale(.995);
+}
+
+/* Séparateur entre les liens (visuel fin) */
+.crumb:not(:last-child)::after {
+    content: "";
+    width: 1px;
+    height: 28px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: -2px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    opacity: 0.6;
+}
+
+/* Responsive: empiler sur petits écrans */
+@media (max-width: 560px) {
+    .TableMenuAcceuil .breadcrumb {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .crumb:not(:last-child)::after { display: none; }
+    .menu-link { justify-content: center; }
 }
 
 .breadcrumb {
@@ -145,3 +227,234 @@ h1 {
 .info-value {
     font-weight: 600;
 }
+
+.TableauFormulaire {
+    width: 80%;
+    margin: 0 auto; /* centre horizontalement */
+    border-collapse: collapse;
+}
+div{
+
+    width: 80%;
+    margin: 0 auto; /* centre horizontalement */
+    border-collapse: collapse;
+
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+canvas#visualizer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* derrière tout */
+}
+.a-propos, .apropos {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 28px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.02);
+    backdrop-filter: blur(8px) saturate(120%);
+    color: #eaeaff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Titre de la section "À propos" */
+.Title-a-propos {
+    font-size: 1.9rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.6px;
+    background: linear-gradient(90deg, #A78BFA, #60A5FA, #7CFFCB);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+/* Trait accent sous le titre */
+.Title-a-propos::after {
+    content: "";
+    width: 110px;
+    height: 4px;
+    background: linear-gradient(90deg, #60A5FA, #A78BFA);
+    border-radius: 4px;
+    display: block;
+    margin: 10px auto 0;
+    opacity: 0.95;
+}
+
+/* Paragraphes et texte dans la section */
+.a-propos p, .apropos p {
+    line-height: 1.6;
+    color: #dfe7ff;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Grille interne réactive */
+.a-propos .apropos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+@media (min-width: 900px) {
+    .a-propos .apropos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Petite mise en avant */
+.a-propos .highlight {
+    color: #60A5FA;
+    font-weight: 700;
+}
+
+.music-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+}
+
+.music-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.music-name {
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.music-controls button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.music-controls button:hover {
+  background-color: #666;
+}
+
+/* Conteneur spécifique à la page À propos */
+.apropos-container {
+    max-width: 1100px;
+    margin: 20px auto 60px;
+    padding: 12px;
+}
+
+/* Ligne d'éléments fun (emoji + contrôles) */
+.fun-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+/* Emoji voiture cliquable */
+.car-emoji {
+    font-size: 48px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 300ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.car-emoji:active { transform: translateY(-6px) rotate(-6deg) scale(1.05); }
+.car-emoji:focus { outline: 3px solid rgba(96,165,250,0.25); border-radius: 8px; }
+
+/* Boutons simples */
+.btn {
+    background: linear-gradient(90deg,#60A5FA,#A78BFA);
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(96,165,250,0.12);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .18s;
+}
+.btn:hover { transform: translateY(-4px); box-shadow: 0 10px 26px rgba(96,165,250,0.18); }
+.btn:active { transform: translateY(-1px) scale(.99); }
+
+/* Confetti root (éléments générés dynamiquement y seront positionnés) */
+.confetti-root {
+    position: fixed;
+    pointer-events: none;
+    inset: 0;
+    z-index: 9999;
+    overflow: visible;
+}
+
+/* Pièce de confetti */
+.confetti-piece {
+    position: absolute;
+    top: -10px;
+    will-change: transform, opacity;
+    border-radius: 2px;
+    opacity: 0.95;
+    animation: confetti-fall 4s linear forwards;
+    transform-origin: center;
+}
+@keyframes confetti-fall {
+    0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 1; }
+    30% { transform: translateY(20vh) rotate(200deg) translateX(15px); }
+    60% { transform: translateY(60vh) rotate(420deg) translateX(-20px); }
+    100% { transform: translateY(120vh) rotate(720deg) translateX(0); opacity: 0; }
+}
+
+/* Texte titre interactif */
+.interactive-title { cursor: pointer; transition: transform .45s ease; }
+.interactive-title:hover { transform: translateY(-6px) scale(1.02) rotate(-1deg); }
+
+/* Section a-propos expand/collapse */
+.a-propos.collapsed { max-height: 220px; overflow: hidden; transition: max-height .45s cubic-bezier(.2,.9,.2,1); }
+.a-propos.expanded { max-height: 2000px; transition: max-height .6s cubic-bezier(.2,.9,.2,1); }
+
+/* Grid et cartes d'événements */
+.apropos-grid { margin-top: 12px; display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media(min-width:900px) { .apropos-grid { grid-template-columns: 1fr 1fr; } }
+
+.event-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+.event-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+.event-card.pulse { animation: pulse 900ms ease-in-out 1; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+
+/* petit style d'accessibilité pour focus clavier */
+.btn:focus, .event-card:focus { outline: 3px solid rgba(96,165,250,0.14); }
